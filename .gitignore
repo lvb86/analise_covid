@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# vscode222
+# vscode
 .vscode/
+
+# venv
+venv_streamlit/
