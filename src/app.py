@@ -26,10 +26,12 @@ def grafico_comparativo(dados_2019, dados_2020, dados_2021, causa, estado='BRASI
         total_2020 = dados_2020.groupby(['uf', 'tipo_doenca']).sum()
         total_2021 = dados_2021.groupby(['uf', 'tipo_doenca']).sum()
 
-        lista = [int(total_2019.loc[estado, causa] if (estado, causa) in total_2021.index else 0),
-                 int(total_2020.loc[estado, causa] if (
-                     estado, causa) in total_2021.index else 0),
-                 int(total_2021.loc[estado, causa] if (estado, causa) in total_2021.index else 0)]
+        lista = [int(total_2019.loc[estado, causa] if (
+            estado, causa) in total_2019.index else 0),
+            int(total_2020.loc[estado, causa] if (
+                estado, causa) in total_2020.index else 0),
+            int(total_2021.loc[estado, causa] if (
+                estado, causa) in total_2021.index else 0)]
 
     dados = pd.DataFrame({'Total': lista, 'Ano': [2019, 2020, 2021]})
 
